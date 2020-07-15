@@ -12,6 +12,11 @@ namespace aspnetcorewebapp
             return a + b;
         }
 
+        public int Somar (int a, int b, int c)
+        {
+            return a + b + c;
+        }
+
         public int Subtrair(int a, int b)
         {
             return a - b;

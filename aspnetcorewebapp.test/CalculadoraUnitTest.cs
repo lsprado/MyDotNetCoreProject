@@ -17,6 +17,16 @@ namespace aspnetcorewebapp.test
         }
 
         [TestMethod]
+        public void SomarTresNumeros()
+        {
+            Calculadora calc = new Calculadora();
+
+            int resultado = calc.Somar(10, 5, 5);
+
+            Assert.AreEqual(20, resultado);
+        }
+
+        [TestMethod]
         public void SubtrairDoisNumeros()
         {
             Calculadora calc = new Calculadora();
