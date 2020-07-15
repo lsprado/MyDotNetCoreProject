@@ -1,0 +1,20 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+stages:
+- stage: 'Build'
+  displayName: 'Build api the image'
+  jobs:
+  - job: Build
+    steps:
+      - task: Docker@2
+        inputs:
+          containerRegistry: 'lodAcr'
+          repository: 'Calculadora'
+          command: 'buildAndPush'
+          Dockerfile: 'aspnetcorewebapp/Dockerfile'
+          tags: |
+            $(Build.BuildId)
+            latest
