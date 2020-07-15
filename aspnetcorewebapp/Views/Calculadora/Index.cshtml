@@ -1,0 +1,36 @@
+﻿@model aspnetcorewebapp.Models.CalculadoraModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Create</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Numero1" class="control-label"></label>
+                <input asp-for="Numero1" class="form-control" />
+                <span asp-validation-for="Numero1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Numero2" class="control-label"></label>
+                <input asp-for="Numero2" class="form-control" />
+                <span asp-validation-for="Numero2" class="text-danger"></span>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <a asp-action="Somar" class="btn btn-info">Somar</a>
+                <a asp-action="Subtrair" class="btn btn-info">Subtrair</a>
+                <a asp-action="Dividir" class="btn btn-info">Dividir</a>
+                <a asp-action="Multiplicar" class="btn btn-info">Multiplicar</a>
+            </div>
+        </form>
+    </div>
+</div>
