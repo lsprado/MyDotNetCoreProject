@@ -19,7 +19,14 @@ namespace aspnetcorewebapp
 
         public int Dividir(int a, int b)
         {
-            return a / b;
+            if(b > 0)
+            {
+                return a / b;
+            }
+            else
+            {
+                throw new Exception("Erro");
+            }
         }
 
         public int Multiplicar(int a, int b)
