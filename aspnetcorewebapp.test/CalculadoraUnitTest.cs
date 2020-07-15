@@ -55,5 +55,15 @@ namespace aspnetcorewebapp.test
 
             Assert.AreEqual(20, resultado);
         }
+
+        [TestMethod]
+        public void MultiplicarTresNumeros()
+        {
+            Calculadora calc = new Calculadora();
+
+            int resultado = calc.Multiplicar(10, 2, 3);
+
+            Assert.AreEqual(60, resultado);
+        }
     }
 }
