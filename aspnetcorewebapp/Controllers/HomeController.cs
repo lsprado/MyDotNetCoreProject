@@ -15,6 +15,7 @@ namespace aspnetcorewebapp.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+            //testing
             _logger = logger;
         }
 
