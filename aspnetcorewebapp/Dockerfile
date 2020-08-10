@@ -16,4 +16,5 @@ RUN dotnet publish "aspnetcorewebapp.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV APPINSIGHTS_INSTRUMENTATIONKEY 123
 ENTRYPOINT ["dotnet", "aspnetcorewebapp.dll"]
