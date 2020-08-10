@@ -25,7 +25,7 @@ namespace aspnetcorewebapp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Somar(CalculadoraModel model)
+        public ActionResult Somar(CalculadoraModel model)
         {
             try
             {
