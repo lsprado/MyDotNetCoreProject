@@ -51,9 +51,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifact
+          path: myapplication/artifact
 
       - name: Display structure of downloaded files
         run: ls -R
+        working-directory: myapplication/artifact
       
       - uses: azure/login@v1
         name: Azure Login
@@ -63,7 +65,7 @@ jobs:
       #- uses: azure/webapps-deploy@v2
       #  with:
       #    app-name: 'githubactionsleandro'
-      #    package: my-artifact
+      #    package: myapplication/artifact
       
       - name: Azure Logout
         run: az logout
