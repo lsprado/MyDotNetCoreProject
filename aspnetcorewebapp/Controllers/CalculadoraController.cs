@@ -18,6 +18,7 @@ namespace aspnetcorewebapp.Controllers
             _logger = logger;
         }
 
+        // Método Index
         public IActionResult Index()
         {
             return View();
