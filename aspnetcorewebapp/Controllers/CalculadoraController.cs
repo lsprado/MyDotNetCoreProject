@@ -41,12 +41,14 @@ namespace aspnetcorewebapp.Controllers
             }
         }
 
+        // Feature 02
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Subtrair(CalculadoraModel model)
         {
             try
             {
+                // Feature 02
                 return View(model);
             }
             catch (Exception ex)
