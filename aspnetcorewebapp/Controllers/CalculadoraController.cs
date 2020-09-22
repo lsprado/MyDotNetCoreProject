@@ -24,12 +24,14 @@ namespace aspnetcorewebapp.Controllers
             return View();
         }
 
+        // Feature 01
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Somar(CalculadoraModel model)
         {
             try
             {
+                // Feature 01
                 return View(model);
             }
             catch (Exception ex)
