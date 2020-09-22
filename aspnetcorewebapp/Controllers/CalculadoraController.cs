@@ -46,6 +46,7 @@ namespace aspnetcorewebapp.Controllers
         {
             try
             {
+                // Feature 02
                 return View(model);
             }
             catch (Exception ex)
