@@ -45,7 +45,6 @@ jobs:
     steps:
       - name: Get Host Name
         run: hostname
-        
       - uses: azure/login@v1
         name: Azure Login
         with:
