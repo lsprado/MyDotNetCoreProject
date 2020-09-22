@@ -34,8 +34,9 @@ jobs:
     - name: Upload result publish
       uses: actions/upload-artifact@v2
       with:
-        name: artifact
+        name: my-artifact
         path: dotnetcorewebapp
+  
   deploy:
     
     needs: build
@@ -46,6 +47,11 @@ jobs:
       - name: Get Host Name
         run: hostname
         
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: my-artifact
+    
       - uses: azure/login@v1
         name: Azure Login
         with:
@@ -54,7 +60,7 @@ jobs:
       - uses: azure/webapps-deploy@v2
         with:
           app-name: 'githubactionsleandro'
-          package: dotnetcorewebapp
+          package: my-artifact
       
       - name: Azure Logout
         run: az logout
