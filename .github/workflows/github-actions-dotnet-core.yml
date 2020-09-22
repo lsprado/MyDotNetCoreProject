@@ -51,16 +51,19 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifact
-    
+
+      - name: Display structure of downloaded files
+        run: ls -R
+      
       - uses: azure/login@v1
         name: Azure Login
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       
-      - uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'githubactionsleandro'
-          package: my-artifact
+      #- uses: azure/webapps-deploy@v2
+      #  with:
+      #    app-name: 'githubactionsleandro'
+      #    package: my-artifact
       
       - name: Azure Logout
         run: az logout
