@@ -8,9 +8,9 @@ on:
 
 jobs:
   build:
-
+    name: Build Application
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v2
     
@@ -36,3 +36,12 @@ jobs:
       with:
         name: artifact
         path: dotnetcorewebapp
+  deploy:
+    
+    needs: build
+    name: Deploy App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Test
+        run: hostname
