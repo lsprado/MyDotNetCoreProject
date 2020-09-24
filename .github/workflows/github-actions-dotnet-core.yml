@@ -36,7 +36,14 @@ jobs:
       with:
         name: my-artifact
         path: dotnetcorewebapp
-  
+    
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: githubactionsleandro
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/dotnetcorewebapp'
+          
   deploy:
     
     needs: build
@@ -57,12 +64,12 @@ jobs:
         run: ls -R
         working-directory: myapplication/artifact
       
-      - name: 'Run Azure webapp deploy action using publish profile credentials'
-        uses: azure/webapps-deploy@v2
-        with: 
-          app-name: githubactionsleandro
-          publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-          package: myapplication/artifact            
+      #- name: 'Run Azure webapp deploy action using publish profile credentials'
+      #  uses: azure/webapps-deploy@v2
+      #  with: 
+      #    app-name: githubactionsleandro
+      #    publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+      #    package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
       
       #- uses: azure/login@v1
       #  name: Azure Login
