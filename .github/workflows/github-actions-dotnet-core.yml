@@ -57,15 +57,22 @@ jobs:
         run: ls -R
         working-directory: myapplication/artifact
       
-      - uses: azure/login@v1
-        name: Azure Login
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: githubactionsleandro
+          publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+          package: myapplication/artifact            
       
-      - uses: azure/webapps-deploy@v1
-        with:
-          app-name: 'githubactionsleandro'
-          package: myapplication/artifact
+      #- uses: azure/login@v1
+      #  name: Azure Login
+      #  with:
+      #    creds: ${{ secrets.AZURE_CREDENTIALS }}
       
-      - name: Azure Logout
-        run: az logout
+      #- uses: azure/webapps-deploy@v1
+      #  with:
+      #    app-name: 'githubactionsleandro'
+      #    package: myapplication/artifact
+      
+      #- name: Azure Logout
+      #  run: az logout
