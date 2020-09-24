@@ -42,7 +42,7 @@ jobs:
       with: 
         app-name: githubactionsleandro
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/dotnetcorewebapp'
+        package: dotnetcorewebapp
           
   deploy:
     
