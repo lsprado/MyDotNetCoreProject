@@ -62,7 +62,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       
-      - uses: azure/webapps-deploy@v2
+      - uses: azure/webapps-deploy@v1
         with:
           app-name: 'githubactionsleandro'
           package: myapplication/artifact
